@@ -1,6 +1,6 @@
 import tensorflow as tf
 import os,sys
-sys.path.insert(0,'../../../../Machine-Learning/OOPS_ML/')
+sys.path.insert(0,'../../../../Machine_Learning/OOPS_ML/')
 from functions.OS.OS import OS
 component='irisData'
 model1=''
