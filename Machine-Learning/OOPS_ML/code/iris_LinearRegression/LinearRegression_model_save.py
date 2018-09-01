@@ -1,5 +1,6 @@
 import os,sys
-sys.path.insert(0,'../../../../Machine-Learning/OOPS-ML/')
+
+sys.path.insert(0,'../../../../Machine-Learning/OOPS_ML/')
 from functions.regression.regression import Regression as regression
 from connections.database.code.sqllite_connection_manager import DatabaseConnection as connect
 from functions.OS.OS import OS
