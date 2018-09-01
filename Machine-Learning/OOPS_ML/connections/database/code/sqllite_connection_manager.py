@@ -2,6 +2,7 @@ import sqlite3, os
 
 class DatabaseConnection:
 
+
      filename=''
 
      def createRequiredPath(self,filename):
