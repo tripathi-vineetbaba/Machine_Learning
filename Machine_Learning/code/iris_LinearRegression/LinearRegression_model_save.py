@@ -28,7 +28,7 @@ test_Widpet=Wid_Pet[150:-1].reshape(-1,1)
 train_Widpet=Wid_Pet[0:150].reshape(-1,1)
 
 learning_rate=0.01
-epochs=100
+epochs=1000
 display_steps=50
 
 train_Lensep=Len_Sep[0:150].reshape(-1,1)
