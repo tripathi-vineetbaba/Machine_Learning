@@ -1,5 +1,6 @@
 import tensorflow as tf
 import os,sys
+import time
 sys.path.insert(0,'../../../Machine_Learning/')
 from functions.OS.OS import OS
 component='irisData'
@@ -27,3 +28,4 @@ with tf.Session() as sess:
     print("Sepal Details")
     print("Weight : ",sess.run('Weight:0'))
     print("Bias : ",sess.run('Bias:0'))
+time.sleep(10)

@@ -21,4 +21,4 @@ class Regression:
         save_path=saver.save(sess,model,global_step=global_steps)
         return storage,save_path
 
-    
+    #def LinearRegression_estimator(self,):
