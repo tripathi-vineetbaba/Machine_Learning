@@ -1,6 +1,4 @@
-import numpy as np
-import pandas
-import random
+import numpy,pandas,random,os,time
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LinearRegression
 from sklearn.naive_bayes import GaussianNB
@@ -10,6 +8,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import model_selection
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import explained_variance_score
+from sklearn import model_selection
+os.system('cls')
 class Sklearn_Algorithm:
 
     model=[]
@@ -18,8 +18,16 @@ class Sklearn_Algorithm:
         self.model=[]
 
 
+
+    def pd(self):
+        return pandas
+
+    def np(self):
+        return numpy
+
+
     def get_model(self):
-        self.model.append(('LinearRegression',LinearRegression()))
+        #self.model.append(('LinearRegression',LinearRegression()))
         self.model.append(('GaussianNB',GaussianNB()))
         self.model.append(('LinearDiscriminantAnalysis',LinearDiscriminantAnalysis()))
         self.model.append(('KNeighborsClassifier',KNeighborsClassifier()))
@@ -28,10 +36,9 @@ class Sklearn_Algorithm:
         return self.model
 
 
-    def get_accurqacy_all_algorithm(self,X,Y):
-        trainX,testX,trainY,testY=model_selection.train_test_split(X,Y,test_size=0.2,random_state=np.random.randint(len(X)))
+    def get_accurqacy_all_algorithm(self,X,Y,all_algorithm=[]):
+        trainX,testX,trainY,testY=model_selection.train_test_split(X,Y,test_size=0.2,random_state=numpy.random.randint(len(X)))
         modelList=self.get_model()
-        all_algorithm=[]
         for name,modelFunc in modelList:
             model=modelFunc
             model.fit(trainX,trainY)
@@ -41,7 +48,7 @@ class Sklearn_Algorithm:
             else:
                 accuracy=accuracy_score(prediction,testY)
             all_algorithm.append([name,accuracy])
-        df=pandas.DataFrame(all_algorithm,columns=['Algorithm','Accuracy_of_Algorithm'],index=['','','','','',''])
+        df=pandas.DataFrame(all_algorithm,columns=['Algorithm','Accuracy_of_Algorithm'],index=['','','','',''])
         return df
 
     def get_fit_algorithm(self,X,Y):
@@ -54,6 +61,7 @@ class Sklearn_Algorithm:
         dataFrame=self.get_fit_algorithm(X,Y)
         model=self.get_model()
         x=random.choice(dataFrame.loc[:,'Algorithm'].values)
+        y=random.choice(dataFrame.loc[:,'Accuracy_of_Algorithm'].values)
         for k in range(len(model)):
             if x==model[k][0]:
-                return model[k][1]
+                return model[k][1],y
