@@ -1,1 +1,1 @@
-__all__=['regression','OS','costs']
+__all__=['regression','OS','costs','sklearn_algorithms']

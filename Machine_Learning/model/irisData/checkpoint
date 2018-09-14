@@ -1,2 +1,2 @@
-model_checkpoint_path: "C:\\Users\\vineet\\Desktop\\Git\\Machine_Learning\\Machine_Learning\\model\\irisData\\irisDataSep-100"
-all_model_checkpoint_paths: "C:\\Users\\vineet\\Desktop\\Git\\Machine_Learning\\Machine_Learning\\model\\irisData\\irisDataSep-100"
+model_checkpoint_path: "C:\\Users\\vineet\\Desktop\\Git\\Machine_Learning\\model\\irisData\\irisDataSep-100"
+all_model_checkpoint_paths: "C:\\Users\\vineet\\Desktop\\Git\\Machine_Learning\\model\\irisData\\irisDataSep-100"
