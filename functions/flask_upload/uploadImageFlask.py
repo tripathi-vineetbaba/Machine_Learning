@@ -1,5 +1,5 @@
 from flask import Flask,request,redirect,url_for,send_from_directory,flash
-import os
+import os,datetime
 import numpy as np
 from PIL import Image
 from flask_httpauth import HTTPBasicAuth
@@ -8,9 +8,10 @@ app=Flask(__name__)
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 pDir='\\'
-parentDir=os.getcwd().split('\\')[0:-1]
+date=datetime.datetime.today().strftime('%Y-%m-%d')
+parentDir=os.getcwd().split('\\')[0:-2]
 pDir=pDir.join(parentDir)
-UPLOAD_FOLDER=pDir+'\\'+'images'
+UPLOAD_FOLDER=pDir+'\\'+'data\\images\\'+date
 app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
 auth=HTTPBasicAuth()
 ##############################################################UPLOAD IMAGE ##############################################################
@@ -18,7 +19,7 @@ def checkDir(imagePath):
     if os.path.exists(imagePath):
         print('Uploaded file will be saved at : '+ imagePath)
     else:
-        os.mkdir(imagePath)
+        os.makedirs(imagePath)
         print('Uploaded file will be saved at : '+ imagePath)
 
 

@@ -25,7 +25,7 @@ print('*************************************************************************
 
 algorithm,accuracy=algos.apply_fit_algorithm(X,Y)
 print("\n\tAlgorithm applied on this data is {1}% accurate. Algorithm is : \t{0} ".format(algorithm,(accuracy*100)))
-testfile=input("\n\tEnter file name with file location : ")
+testfile=input("\n\tEnter test filename : ")
 read_file=pd.read_csv(testfile,sep=',')
 read_file=read_file.values
 testY=read_file[:,-1]
