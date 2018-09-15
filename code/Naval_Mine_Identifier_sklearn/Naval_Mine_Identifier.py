@@ -38,8 +38,6 @@ prediction=algorithm.predict(testX)
 print('\n***********************************************PREDICTION AND ACTUAL VALUE************************************************\n')
 for x in range(len(prediction)):
     print("Predicted Class : {0}\t\t\t {2} : {1}".format(prediction[x],testY[x],'Actual Class'))
-#    else:
-#        print("Predicted Class : {0}\t\t {2} : {1}".format(prediction[x],testY[x],'Actual Class'))
 print("\n*************************************************ACCURACY****************************************\nOverall Accuracy : {0}".format(accuracy))
 
 time.sleep(30)
