@@ -1,4 +1,9 @@
-import sqlite3, os
+try:
+    import sqlite3, os
+except ImportError:
+    import pysqlite3 as sqlite3
+    import os
+
 
 class DatabaseConnection:
 
