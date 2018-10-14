@@ -12,7 +12,7 @@ if OS.checkDir(OS,component) :
     model2=model_dir+'irisDataSep-100.meta'
     model1=model_dir+'irisDataPet-100.meta'
 
-
+#
 saver1=tf.train.import_meta_graph(model1)
 
 saver2=tf.train.import_meta_graph(model2)
